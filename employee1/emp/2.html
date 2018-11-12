@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <title>Employee Details</title>
+</head>
+<body>
+        <div id="app">
+                <div class="container">
+                  <form>
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+                        <h1>Empolyee Details</h1>
+                        <hr>
+                        <div class="form-details">
+                                <label for="Id">Emp Id</label>
+                                <input
+                                    type="number"
+                                    id="Id"
+                                    class="form-control"
+                                    v-model="userData.Id" required>
+                              </div><br/>
+                        <div class="form-details">
+                          <label for="Fname">Fisrt name</label>
+                          <input
+                              type="text"
+                              id="fname"
+                              class="form-control"
+                              v-model="userData.fname"required>
+                        </div><br/><br/>
+                        
+                        <div class="form-details">
+                                <label for="Lname">Last name</label>
+                                <input
+                                    type="text"
+                                    id="Lname"
+                                    class="form-control"
+                                    v-model="userData.Lname"required>
+                              </div><br/>
+                              <div class="form-details">
+                                    <label for="Email">Email</label>
+                                    <input
+                                        type="email"
+                                        id="Email"
+                                        class="form-control"
+                                        v-model="userData.Email"required>
+                                  </div><br/>
+                                  <div class="row">
+                                        <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-group">
+                                         Gender: <label for="male">
+                                            <input
+                                                type="radio"
+                                                id="male"
+                                                value="Male"
+                                                v-model="gender"> Male
+                                          </label>
+                                          <label for="female">
+                                            <input
+                                                type="radio"
+                                                id="female"
+                                                value="Female"
+                                                v-model="gender"> Female
+                                          </label>
+                                        </div>
+                                      </div>
+                                    </form>
+                                      <div class="panel-body">
+                                            <p>Emp Id: {{ userData.Id }}</p>
+                                            <p>First name: {{ userData.fname }}</p>
+                                            <p>Last name: {{ userData.Lname }}</p>
+                                            <p>Email:{{ userData.Email }}</p>
+                                            <p>Gender:{{ gender }}</p>
+                                         </div> 
+                                         <div class="row">
+                                                <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+                                                  <button class="btn btn-primary" @click.prevent="submitted">Submit!
+                                                  </button>
+                                                  <button class='btn btn-default' @click='resetform()'>Reset</button>
+                                                  <button class='btn btn-default'@click='destroyUser()'>Delete</button>
+  
+                                                </div>
+                                              </div>
+                                            </form>
+                                            <hr>
+                                            <div class="row" v-if="isSubmitted">
+                                              <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+                                                <div class="panel panel-default">
+                                                
+                                                  <div class="panel-heading">
+                                                    <h4>Your Data</h4>
+                                                  </div>
+                                                  <div class="panel-body">
+                                                    <p>Emp Id:{{userData.Id }}
+                                                    <p>Full Name: {{ userData.fname }} {{ userData.Lname }}</p>
+                                                    <p>Mail: {{ userData.Email }}</p>
+                                                     <p>Gender: {{ gender }}</p>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>  
+                                                    
+                        <script src="2.js"></script>
+    </body>
+    </html>
