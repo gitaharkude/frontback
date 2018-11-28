@@ -2,7 +2,7 @@
   <div>
     <h1>Employee Details</h1>
     <form v-on:submit.prevent="AddDetails">
-     <!-- <div class="row">
+     <!-- <div class="">
         <div class="col-md-6">
           <div class="form-group">
             <label>Emp Id:</label>
